@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
+#include<math.h>
 //int main()
 //{
 //	printf("%d\n", sizeof(int));/*字节   一个字节等于八个比特   bit-比特位 byte-字节  kb mb gb tb pb */
@@ -428,10 +429,93 @@
 //}
 
 //B 
+//int main()
+//{
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	printf("%d %d",a/b,a%b);
+//	return 0;
+//}
+//int main()
+//{
+//	int age;
+//	printf("请输入你的年龄：");
+//	scanf("%d", &age);
+//	if (age < 18)
+//	{
+//		printf("未成年");
+//	}
+//	else if (age >= 18 && age <= 28)
+//	{
+//		printf("青年");
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int a, b;
+//	scanf("%d", &a);
+//	if (0 == a % 2)
+//	{
+//		printf("你输入的数是偶数");
+//	}
+//	else
+//		printf("你输入的数是奇数");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a=1;
+//	while (a <= 100)
+//	{
+//		if (1 == a % 2)
+//		{
+//			printf("%d ", a);
+//		}
+//		a++;
+//	}
+//	return 0;
+//}
+
 int main()
 {
-	int a, b;
-	scanf("%d %d", &a, &b);
-	printf("%d %d",a/b,a%b);
+	int a, b, c=1, d, e,g;
+	printf("请输入一个不多于五位的正整数\n");
+	scanf("%d", &a);
+	if (a <= 100000)
+	{
+		b = a;
+		e = a;
+		while (a != 0)
+		{
+			a = a / 10;
+			if (0 == a)
+			{
+				printf("这是%d位数\n", c);
+			}
+			else if (0 != a)
+				c++;
+		}
+		double f = pow(10, c-1);
+		while (c!=0)
+		{
+			g=e / f;
+			e = e - (g * f);
+			printf("%d", g);
+			f = f / 10;
+			c--;
+	
+		}
+		while (b != 0)
+		{
+			d = b % 10;
+			b = b / 10;
+			printf("%d", d);
+		}
+	}
+
+	else
+		printf("您输入的值过大");
 	return 0;
 }
